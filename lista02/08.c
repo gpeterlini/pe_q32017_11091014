@@ -17,6 +17,10 @@ double acrescimos(int sal, int hrsExtra){
 	totalAC = ((sal/20.0)/8.0)*hrsExtra + 40.0*hrsExtra;
 }
 
+double salarioTotal(double sal , double ac, double dc){
+	return sal+ac-dc;
+}
+
 
 
 int imprimeSalario(int id, int faltas, int hrsExtra){
@@ -31,7 +35,7 @@ int imprimeSalario(int id, int faltas, int hrsExtra){
 		printf("descontos: %d\n", dc);
 		ac = acrescimos(salDiretor, hrsExtra);
 		printf("acrescimos: %.2lf\n", ac);
-		total = salDiretor + ac - dc;
+		total = salarioTotal(salDiretor, ac, dc);
 		printf("salario: %.2lf\n", total);
 		break;
 	case 2:
@@ -42,7 +46,7 @@ int imprimeSalario(int id, int faltas, int hrsExtra){
 		printf("descontos: %d\n", dc);
 		ac = acrescimos(salGerente, hrsExtra);
 		printf("acrescimos: %.2lf\n", ac);
-		total = salGerente + ac - dc;
+		total = salarioTotal(salGerente, ac, dc);
 		printf("salario: %.2lf\n", total);
 		break;
 	case 3:
@@ -53,7 +57,7 @@ int imprimeSalario(int id, int faltas, int hrsExtra){
 		printf("descontos: %d\n", dc);
 		ac = acrescimos(salEngenheiro, hrsExtra);
 		printf("acrescimos: %.2lf\n", ac);
-		total = salEngenheiro + ac - dc;
+		total = salarioTotal(salEngenheiro, ac, dc);
 		printf("salario: %.2lf\n", total);
 		break;
 	case 4:
@@ -64,7 +68,7 @@ int imprimeSalario(int id, int faltas, int hrsExtra){
 		printf("descontos: %d\n", dc);
 		ac = acrescimos(salTecnico, hrsExtra);
 		printf("acrescimos: %.2lf\n", ac);
-		total = salTecnico + ac - dc;
+		total = salarioTotal(salTecnico, ac, dc);
 		printf("salario: %.2lf\n", total);
 		break;
 	case 5:
@@ -75,7 +79,7 @@ int imprimeSalario(int id, int faltas, int hrsExtra){
 		printf("descontos: %d\n", dc);
 		ac = acrescimos(salOperador, hrsExtra);
 		printf("acrescimos: %.2lf\n", ac);
-		total = salOperador + ac - dc;
+		total = salarioTotal(salOperador, ac, dc);
 		printf("salario: %.2lf\n", total);
 		break;
 	}
