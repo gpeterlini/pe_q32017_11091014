@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-
+int v[20];
 int decimalParaBinario(int valor){
+  int cont = 0;
 	while(valor!=0){
 	   v[cont] = valor%2;
 	   valor = valor/2;
@@ -14,6 +15,7 @@ int decimalParaBinario(int valor){
 
 int binarioParaDecimal(int valor){
 	int res = 0;
+	int cont = 0;
 	while(valor!=0){
 	    v[cont] = valor%10;
 	    valor = valor/10;
@@ -32,7 +34,6 @@ int main()
 	int valor, opt;
 	
 	scanf("%d %d", &valor, &opt);
-	int v[10];
 	for(int j=0; j<10; j++){
 		v[j] = 0;
 	}
