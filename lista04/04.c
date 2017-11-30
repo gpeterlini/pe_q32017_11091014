@@ -6,27 +6,40 @@
 
 typedef unsigned long int ulint;
 
-ulint f1(ulint x)
+int f1(ulint x)
 {
-  int div = 8;
-  return x / div;
+  ulint num = 1;
+  while(num<x){
+    num << 1;
+    if(num=x){
+        return 1;
+      }
+    }
+    return 0;
 }
 
-ulint f2(ulint x)
+int f2(ulint x)
 {
-  return x>>3;
+  ulint num = 1;
+  while(num<x){
+    num = num * 2;
+    if(num=x){
+      return 1;
+    }
+  }
+  return 0;
 }
 
 int main (void)
 {
   clock_t tempo_init, tempo_fim;
   double tempo_gasto;
-  ulint soma = 0;
+
 
   tempo_init = clock();
   for(int i =0;i<BIGNUM; i++)
   {
-    soma += f1(i);
+    f2(i);
   }
   tempo_fim = clock();
   tempo_gasto = (double)(tempo_fim - tempo_init) / CLOCKS_PER_SEC;
@@ -35,7 +48,7 @@ int main (void)
   tempo_init = clock();
   for (int i=0; i<BIGNUM; i++)
   {
-    soma += f2(i);
+    f1(i);
   }
   tempo_fim = clock();
   tempo_gasto = (double)(tempo_fim - tempo_init)/CLOCKS_PER_SEC;
